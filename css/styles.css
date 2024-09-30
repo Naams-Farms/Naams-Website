@@ -1,0 +1,181 @@
+
+/* Reset margins, paddings, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: #8b4513;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+/* Navigation Styling */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #663300;
+    padding: 15px 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0 20px;
+    font-size: 1.2em;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #f4f4f9;
+}
+
+/* Call-to-Action (CTA) Styling */
+.cta {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 2em;
+    color: #333;
+}
+
+.cta span {
+    font-weight: bold;
+    color: #663300;
+}
+
+/* Product Section Styling */
+.products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.product {
+    text-align: center;
+    width: 30%;
+    margin: 20px;
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.product img:hover {
+    transform: scale(1.1);
+}
+
+.product p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #8b4513;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    header {
+        font-size: 2em;
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 1em;
+        padding: 0 10px;
+    }
+
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 80%;
+        margin: 15px 0;
+    }
+}
+
+/* Example of animation for the CTA */
+.cta {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Mission Statement Styling */
+.mission {
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 40px auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mission h2 {
+    font-size: 2em;
+    color: #8b4513;
+    margin-bottom: 20px;
+}
+
+.mission p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Profile Section Styling */
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    min-height: 70px; /* Ensure enough height for image and text */
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    object-fit: cover; /* Ensure the image fits the container */
+}
+
+.profile p {
+    margin: 0; /* Remove extra space around the text */
+    font-size: 1.2em;
+}
