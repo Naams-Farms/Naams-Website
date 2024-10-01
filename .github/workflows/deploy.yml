@@ -1,0 +1,32 @@
+name: Deploy to S3
+
+# Trigger this action on pushes to the main branch (adjust branch as needed)
+on:
+  push:
+    branches:
+      - main  # Adjust to your branch name if needed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the latest code
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Step 2: Set up AWS credentials using secrets from GitHub
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1  # Change to your bucket region
+
+      # Step 3: Sync files to the S3 bucket
+      - name: Sync S3 Bucket
+        run: |
+          aws s3 sync . s3://naamsfarms.com --delete --acl public-read
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
